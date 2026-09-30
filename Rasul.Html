@@ -1,167 +1,187 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neon Premium</title>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #050507;
-        font-family: Arial, sans-serif;
-        color: white;
-        overflow: hidden;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        width: 300px;
-        height: 300px;
-        background: #00f7ff;
-        filter: blur(130px);
-        opacity: 0.15;
-        top: -100px;
-        left: -100px;
-      }
-
-      body::after {
-        content: "";
-        position: fixed;
-        width: 300px;
-        height: 300px;
-        background: #8a2be2;
-        filter: blur(130px);
-        opacity: 0.15;
-        bottom: -100px;
-        right: -100px;
-      }
-
-      .card {
-        width: 320px;
-        padding: 30px;
-        border: 1px solid rgba(0, 247, 255, 0.25);
-        border-radius: 24px;
-        background: rgba(15, 15, 20, 0.72);
-        backdrop-filter: blur(20px);
-        box-shadow:
-          0 0 30px rgba(0, 247, 255, 0.08),
-          inset 0 0 25px rgba(255, 255, 255, 0.02);
-        text-align: center;
-        position: relative;
-        z-index: 2;
-        transition: 0.4s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-7px);
-        border-color: rgba(0, 247, 255, 0.6);
-        box-shadow:
-          0 0 45px rgba(0, 247, 255, 0.15),
-          inset 0 0 30px rgba(0, 247, 255, 0.03);
-      }
-
-      .logo {
-        width: 65px;
-        height: 65px;
-        margin: 0 auto 18px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 28px;
-        font-weight: 800;
-        color: #00f7ff;
-        border: 1px solid rgba(0, 247, 255, 0.5);
-        box-shadow: 0 0 25px rgba(0, 247, 255, 0.3);
-        background: rgba(0, 247, 255, 0.04);
-      }
-
-      h1 {
-        font-size: 25px;
-        letter-spacing: -1px;
-        margin-bottom: 9px;
-      }
-
-      p {
-        color: #8e929b;
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 22px;
-      }
-
-      button {
-        width: 100%;
-        padding: 13px;
-        border: none;
-        border-radius: 13px;
-        background: #00f7ff;
-        color: #020405;
-        font-weight: 800;
-        cursor: pointer;
-        transition: 0.3s ease;
-        box-shadow: 0 0 20px rgba(0, 247, 255, 0.25);
-      }
-
-      button:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 30px rgba(0, 247, 255, 0.55);
-      }
-
-      button:active {
-        transform: scale(0.97);
-      }
-
-      #status {
-        margin-top: 14px;
-        font-size: 12px;
-        color: #00f7ff;
-        opacity: 0;
-        transform: translateY(5px);
-        transition: 0.3s ease;
-      }
-
-      #status.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
+    <title>NEON — Digital Experience</title>
+    <link rel="stylesheet" href="Rasul.css">
   </head>
 
   <body>
-    <div class="card">
-      <div class="logo">N</div>
+    <!-- NAVBAR -->
 
-      <h1>Neon Experience</h1>
+    <nav>
+      <div class="logo">N<span>.</span></div>
 
-      <p>Minimal, premium va zamonaviy neon interface.</p>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-      <button id="btn">Explore</button>
+      <button class="nav-btn" id="navButton">Get Started</button>
+    </nav>
 
-      <div id="status">✦ Welcome to the future</div>
-    </div>
+    <!-- HERO -->
 
-    <script>
-      const button = document.getElementById("btn");
-      const status = document.getElementById("status");
+    <main id="home">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content reveal">
+            <div class="badge">
+              <span class="dot"></span>
+              DIGITAL EXPERIENCE
+            </div>
 
-      button.addEventListener("click", () => {
-        status.classList.toggle("show");
+            <h1>
+              Build something
+              <span>different.</span>
+            </h1>
 
-        button.textContent = status.classList.contains("show")
-          ? "Activated ✓"
-          : "Explore";
-      });
-    </script>
+            <p>
+              A modern digital experience built around clean design, powerful
+              interactions and a futuristic neon aesthetic.
+            </p>
+
+            <div class="hero-buttons">
+              <button class="primary-btn" id="exploreBtn">
+                Explore Experience →
+              </button>
+
+              <button class="secondary-btn" id="learnBtn">Learn More</button>
+            </div>
+          </div>
+
+          <div class="hero-card reveal">
+            <div class="card-top">
+              <div class="card-icon">✦</div>
+
+              <span class="live"> ● LIVE </span>
+            </div>
+
+            <h3>98.7%</h3>
+
+            <p>Performance experience</p>
+
+            <div class="line">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+
+      <section id="features">
+        <div class="container">
+          <div class="section-label reveal">Why Neon</div>
+
+          <h2 class="section-title reveal">Designed to stand out.</h2>
+
+          <div class="features">
+            <div class="feature reveal">
+              <div class="feature-number">01 /</div>
+
+              <h3>Premium Design</h3>
+
+              <p>
+                Minimal layouts, glass surfaces and carefully crafted visual
+                details create a premium experience.
+              </p>
+            </div>
+
+            <div class="feature reveal">
+              <div class="feature-number">02 /</div>
+
+              <h3>Fluid Motion</h3>
+
+              <p>
+                Smooth transitions and subtle interactions make every part of
+                the interface feel alive.
+              </p>
+            </div>
+
+            <div class="feature reveal">
+              <div class="feature-number">03 /</div>
+
+              <h3>Modern Technology</h3>
+
+              <p>
+                Built with modern web standards and responsive architecture for
+                every screen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SHOWCASE -->
+
+      <section id="about">
+        <div class="container">
+          <div class="section-label reveal">Experience</div>
+
+          <h2 class="section-title reveal">Simple. Powerful. Neon.</h2>
+
+          <div class="showcase">
+            <div class="showcase-box reveal">
+              <h3>Future is now.</h3>
+
+              <p>
+                Interfaces don't have to be complicated. The best experiences
+                combine simplicity, performance and personality.
+              </p>
+
+              <div class="orb"></div>
+            </div>
+
+            <div class="showcase-box small-box reveal">
+              <div class="section-label">Performance</div>
+
+              <div class="stat">
+                <strong>24/7</strong>
+                <span>Digital presence</span>
+              </div>
+
+              <div class="stat">
+                <strong>∞</strong>
+                <span>Possibilities</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+
+      <section id="contact">
+        <div class="container">
+          <div class="cta reveal">
+            <h2>Ready to create?</h2>
+
+            <p>Turn your next idea into a premium digital experience.</p>
+
+            <button class="primary-btn" id="ctaButton">
+              Start Something New →
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="container">
+        <span>© 2026 NEON.</span>
+
+        <span>Built for the future.</span>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="Rasul.js"></script>
   </body>
 </html>
