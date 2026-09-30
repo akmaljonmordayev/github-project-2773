@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Premium</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #050507;
+        font-family: Arial, sans-serif;
+        color: white;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        background: #00f7ff;
+        filter: blur(130px);
+        opacity: 0.15;
+        top: -100px;
+        left: -100px;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        background: #8a2be2;
+        filter: blur(130px);
+        opacity: 0.15;
+        bottom: -100px;
+        right: -100px;
+      }
+
+      .card {
+        width: 320px;
+        padding: 30px;
+        border: 1px solid rgba(0, 247, 255, 0.25);
+        border-radius: 24px;
+        background: rgba(15, 15, 20, 0.72);
+        backdrop-filter: blur(20px);
+        box-shadow:
+          0 0 30px rgba(0, 247, 255, 0.08),
+          inset 0 0 25px rgba(255, 255, 255, 0.02);
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        transition: 0.4s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(0, 247, 255, 0.6);
+        box-shadow:
+          0 0 45px rgba(0, 247, 255, 0.15),
+          inset 0 0 30px rgba(0, 247, 255, 0.03);
+      }
+
+      .logo {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 18px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 800;
+        color: #00f7ff;
+        border: 1px solid rgba(0, 247, 255, 0.5);
+        box-shadow: 0 0 25px rgba(0, 247, 255, 0.3);
+        background: rgba(0, 247, 255, 0.04);
+      }
+
+      h1 {
+        font-size: 25px;
+        letter-spacing: -1px;
+        margin-bottom: 9px;
+      }
+
+      p {
+        color: #8e929b;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 22px;
+      }
+
+      button {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 13px;
+        background: #00f7ff;
+        color: #020405;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 0 20px rgba(0, 247, 255, 0.25);
+      }
+
+      button:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 30px rgba(0, 247, 255, 0.55);
+      }
+
+      button:active {
+        transform: scale(0.97);
+      }
+
+      #status {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #00f7ff;
+        opacity: 0;
+        transform: translateY(5px);
+        transition: 0.3s ease;
+      }
+
+      #status.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="logo">N</div>
+
+      <h1>Neon Experience</h1>
+
+      <p>Minimal, premium va zamonaviy neon interface.</p>
+
+      <button id="btn">Explore</button>
+
+      <div id="status">✦ Welcome to the future</div>
+    </div>
+
+    <script>
+      const button = document.getElementById("btn");
+      const status = document.getElementById("status");
+
+      button.addEventListener("click", () => {
+        status.classList.toggle("show");
+
+        button.textContent = status.classList.contains("show")
+          ? "Activated ✓"
+          : "Explore";
+      });
+    </script>
+  </body>
+</html>
